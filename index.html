@@ -1,93 +1,215 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>나의 포트폴리오</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>성진 박 — Architecture Portfolio</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      padding: 0;
-      line-height: 1.6;
-      background-color: #f9f9f9;
-      color: #333;
+      font-family: 'Arial', sans-serif;
+      background: #f8fafc;
+      color: #1e293b;
+      line-height: 1.5;
     }
     header {
-      background: #222;
-      color: #fff;
+      max-width: 1200px;
+      margin: auto;
       padding: 1.5rem;
-      text-align: center;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
-    nav {
-      margin-top: 1rem;
+    header .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
     }
-    nav a {
+    header .logo div {
+      width: 40px; height: 40px;
+      background: #0f172a;
       color: #fff;
-      margin: 0 10px;
-      text-decoration: none;
+      display: flex; align-items: center; justify-content: center;
+      border-radius: 12px;
       font-weight: bold;
     }
-    nav a:hover {
-      text-decoration: underline;
+    nav a {
+      margin-left: 1rem;
+      font-size: 0.9rem;
+      text-decoration: none;
+      color: #334155;
     }
+    nav a:hover { text-decoration: underline; }
     section {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 1rem;
+      max-width: 1200px;
+      margin: auto;
+      padding: 1.5rem;
+    }
+    .card {
       background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      border-radius: 16px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
     }
-    h2 {
-      border-bottom: 2px solid #ddd;
-      padding-bottom: 0.5rem;
-      margin-bottom: 1rem;
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: center;
     }
-    footer {
-      background: #222;
-      color: #fff;
+    .hero h2 {
+      font-size: 2rem;
+      font-weight: bold;
+    }
+    .btn {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      border-radius: 12px;
+      font-size: 0.9rem;
+      margin-right: 0.5rem;
+      text-decoration: none;
+    }
+    .btn-dark { background: #0f172a; color: #fff; }
+    .btn-light { border: 1px solid #cbd5e1; color: #334155; }
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .project-card {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      overflow: hidden;
+    }
+    .project-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .project-card .info {
+      padding: 0.75rem;
+    }
+    .footer {
+      max-width: 1200px;
+      margin: auto;
+      padding: 2rem 1.5rem;
+      font-size: 0.85rem;
+      color: #64748b;
+      border-top: 1px solid #e2e8f0;
       text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
     }
   </style>
 </head>
 <body>
+
+  <!-- Header -->
   <header>
-    <h1>박성진 포트폴리오</h1>
+    <div class="logo">
+      <div>SJ</div>
+      <div>
+        <h1 style="font-size:1rem; margin:0;">성진 박 — Architecture Portfolio</h1>
+        <p style="margin:0; font-size:0.8rem; color:#64748b;">건축 / 디자인 / 프로젝트 모음</p>
+      </div>
+    </div>
     <nav>
-      <a href="#about">소개</a>
-      <a href="#projects">프로젝트</a>
-      <a href="#contact">연락처</a>
+      <a href="#projects">Projects</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
     </nav>
   </header>
 
-  <section id="about">
-    <h2>소개</h2>
-    <p>안녕하세요! 저는 건축학과 학생으로, 그동안 해왔던 건축 설계 및 프로젝트를 정리한 포트폴리오 사이트입니다.</p>
+  <!-- Hero -->
+  <section>
+    <div class="card hero">
+      <div>
+        <h2>작업을 개념부터 기록까지<br/>한 곳에 모아두세요</h2>
+        <p style="margin-top:0.5rem; color:#475569;">
+          프로젝트 설명, 평면도, 모형사진, 시공사진, 보고서를 업로드해 전시형 포트폴리오를 만드세요.
+        </p>
+        <div style="margin-top:1rem;">
+          <a href="#projects" class="btn btn-dark">작업 보러가기</a>
+          <a href="#contact" class="btn btn-light">연락하기</a>
+        </div>
+      </div>
+      <div style="background:#f1f5f9; border-radius:16px; height:200px; display:flex; justify-content:center; align-items:center;">
+        대표 이미지 또는 모형 사진
+      </div>
+    </div>
   </section>
 
+  <!-- Projects -->
   <section id="projects">
-    <h2>프로젝트</h2>
-    <p>제가 진행했던 건축 프로젝트와 작업물을 모아둔 공간입니다.</p>
-    <ul>
-      <li>🏛 2학년 1학기 주택설계</li>
-      <li>🏢 뮤지엄산 분석및모델</li>
-      <li>🏟 2학년2학기 갤러리 설계</li>
-    </ul>
+    <h2 style="font-size:1.5rem; font-weight:bold; margin-bottom:1rem;">Projects</h2>
+    <div class="projects">
+      <div class="project-card">
+        <img src="images/project-a-cover.jpg" alt="작업 A 대표 이미지" />
+        <div class="info">
+          <h3 style="margin:0;">작업 A — 소형 주택 리노베이션</h3>
+          <p style="font-size:0.8rem; color:#64748b;">2024 · 주거 · 85m²</p>
+          <p style="font-size:0.9rem; margin-top:0.5rem;">
+            프라이버시를 지키는 방패형 메스. 작은 부지에서 쾌적한 실내환경 구현.
+          </p>
+        </div>
+      </div>
+      <div class="project-card">
+        <img src="images/project-b-cover.jpg" alt="작업 B 대표 이미지" />
+        <div class="info">
+          <h3 style="margin:0;">작업 B — 공공 전시장</h3>
+          <p style="font-size:0.8rem; color:#64748b;">2023 · 공공 · 240m²</p>
+          <p style="font-size:0.9rem; margin-top:0.5rem;">
+            전시 동선 최적화와 가변형 조명, 저예산 재료 활용.
+          </p>
+        </div>
+      </div>
+      <div class="project-card">
+        <img src="images/project-c-cover.jpg" alt="작업 C 대표 이미지" />
+        <div class="info">
+          <h3 style="margin:0;">작업 C — 스터디 하우스</h3>
+          <p style="font-size:0.8rem; color:#64748b;">2022 · 상업 · 120m²</p>
+          <p style="font-size:0.9rem; margin-top:0.5rem;">
+            커뮤니티 중심 소규모 상업공간. 친환경 마감재 사용.
+          </p>
+        </div>
+      </div>
+    </div>
   </section>
 
+  <!-- About -->
+  <section id="about">
+    <div class="card">
+      <h3 style="font-size:1.25rem; font-weight:bold;">About / 소개</h3>
+      <p style="margin-top:0.5rem; color:#475569;">
+        안녕하세요. 저는 건축을 전공하는 학생(또는 실무자)입니다. 작업과 프로젝트를 정리해두었습니다.
+      </p>
+      <ul style="margin-top:0.5rem; font-size:0.9rem; color:#475569;">
+        <li>• 프로젝트별 핵심: 개념 / 공간 구성 / 재료 / 조명</li>
+        <li>• 이미지 권장: 너비 1600px 이상, JPG/WEBP 압축</li>
+        <li>• 파일명 규칙: YYYY-프로젝트명-번호.jpg</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Contact -->
   <section id="contact">
-    <h2>연락처</h2>
-    <p>문의나 협업 제안은 아래 이메일로 연락해주세요.</p>
-    <p><strong>Email:</strong> example@email.com</p>
+    <div class="card">
+      <h4 style="font-size:1.1rem; font-weight:bold;">Contact</h4>
+      <p style="margin-top:0.5rem; color:#475569;">
+        포트폴리오 수정 및 협업 문의가 있다면 아래로 연락주세요.
+      </p>
+      <a href="mailto:your.email@example.com" class="btn btn-light" style="margin-top:1rem; display:inline-block;">Email 보내기</a>
+    </div>
   </section>
 
-  <footer>
-    <p>© 2025 박성진 | Portfolio</p>
+  <!-- Footer -->
+  <footer class="footer">
+    © 2025 성진 박 — All rights reserved.
   </footer>
+
 </body>
 </html>
+
+
 
 
